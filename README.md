@@ -1,2 +1,2 @@
-# laravel-sanbox
-A Laravel Project for private.
+# Laravel-sandbox
+A Laravel Project for studying.
