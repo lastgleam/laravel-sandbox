@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/SignUp','SignUpController@showForm');
-Route::post('/SignUp','SignUpController@signUp');
+Route::get('/SignUp','SignUpFormController@action');
+Route::post('/SignUp/result','SignUpResultController@action');

@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: donghee_kim
- * Date: 2017/10/10
- * Time: 16:19
+ * Date: 2017/10/13
+ * Time: 14:21
  */
 namespace App\Http\Controllers;
 
@@ -11,21 +11,13 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Validator;
 
-class SignUpController extends BaseController{
-    /**
-     * フォームを返却する
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function showForm() {
-        return view('form');
-    }
-
+class SignUpResultController extends BaseController{
     /**
      * 登録する。失敗するとフォーム入力画面にエラーとともにリダイレクトする。
      * @param Request $request
      * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function signUp(Request $request) {
+    public function action(Request $request) {
         $request->flash();
         $validator = Validator::make($request->all(),[
             'surname'=>'required',
