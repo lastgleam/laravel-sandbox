@@ -28,7 +28,7 @@
                <h1>フォーム<br/><small>下のフォームを完成してから提出ボタンを押すと登録されます。</small></h1>
            </div>
            <div class="col-lg-6">
-               <form class="form-horizontal" method="post" action="/SignUp/result">
+               <form class="form-horizontal" method="post" action="{{action('SignUpResultController@result')}}">
                    {{csrf_field()}}
                    <div class="form-group">
                        <label class="col-sm-2 control-label">性</label>

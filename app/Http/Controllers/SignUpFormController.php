@@ -15,7 +15,7 @@ class SignUpFormController extends BaseController{
      * フォームを返却する
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function action() {
+    public function input() {
         return view('form');
     }
 }

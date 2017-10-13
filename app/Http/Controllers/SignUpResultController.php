@@ -17,7 +17,7 @@ class SignUpResultController extends BaseController{
      * @param Request $request
      * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function action(Request $request) {
+    public function result(Request $request) {
         $request->flash();
         $validator = Validator::make($request->all(),[
             'surname'=>'required',
