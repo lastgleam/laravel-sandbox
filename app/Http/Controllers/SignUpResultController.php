@@ -27,12 +27,15 @@ class SignUpResultController extends BaseController{
             'gender'=>'required',
             'hobby'=>'required'
         ]);
+        //バリデーションに失敗した場合
         if ($validator->fails()) {
             return redirect('/SignUp')
                 ->withErrors($validator)
                 ->withInput();
         }
+        //引き継がれた値を日本語に変換
+        $result = $request;
 
-        return view('result', ['request' => $request]);
+        return view('result', ['result' => $result]);
     }
 }

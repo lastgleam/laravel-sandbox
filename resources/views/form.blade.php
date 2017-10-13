@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+        <title>SignUp</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -52,12 +52,24 @@
                        <label class="col-sm-2 control-label">国籍</label>
                        <div class="col-sm-10">
                            <select class="form-control" name="country">
-                               <option value="japan">日本</option>
-                               <option value="korea">韓国</option>
-                               <option value="india">インド</option>
-                               <option value="china">中国</option>
-                               <option value="vietnam">ベトナム</option>
-                               <option value="usa">米国</option>
+                               <option value="japan"
+                               {{old('country') === 'japan'? 'selected' : '' }}
+                               >日本</option>
+                               <option value="korea"
+                               {{old('country') === 'korea'? 'selected' : '' }}
+                               >韓国</option>
+                               <option value="india"
+                               {{old('country') === 'india'? 'selected' : '' }}
+                               >インド</option>
+                               <option value="china"
+                               {{old('country') === 'china'? 'selected' : '' }}
+                               >中国</option>
+                               <option value="vietnam"
+                               {{old('country') === 'vietnam'? 'selected' : '' }}
+                               >ベトナム</option>
+                               <option value="usa"
+                               {{old('country') === 'usa'? 'selected' : '' }}
+                               >米国</option>
                            </select>
                        </div>
                    </div>
@@ -65,40 +77,62 @@
                        <label class="col-sm-2 control-label">性別</label>
                        <div class="col-sm-10">
                            <label class="radio-inline">
-                               <input type="radio" name="gender" value="male">男</label>
+                               <input type="radio" name="gender" value="male"
+                               {{old('gender') === 'male'? 'checked' : '' }}
+                               >男</label>
                            <label class="radio-inline">
-                               <input type="radio" name="gender" value="female">女</label>
+                               <input type="radio" name="gender" value="female"
+                               {{old('gender') === 'female'? 'checked' : '' }}
+                               >女</label>
                        </div>
                    </div>
                    <div class="form-group">
                        <label class="col-sm-2 control-label">趣味</label>
                        <div class="col-sm-10">
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="sports"> スポーツ
+                               <input type="checkbox" name="hobby[]" value="sports"
+                               {{in_array('sports',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > スポーツ
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="music"> 音楽
+                               <input type="checkbox" name="hobby[]" value="music"
+                               {{in_array('music',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > 音楽
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="cinema"> 映画
+                               <input type="checkbox" name="hobby[]" value="cinema"
+                               {{in_array('cinema',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > 映画
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="shopping"> 買い物
+                               <input type="checkbox" name="hobby[]" value="shopping"
+                               {{in_array('shopping',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > 買い物
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="manga/anime"> マンガ・アニメ
+                               <input type="checkbox" name="hobby[]" value="manga/anime"
+                               {{in_array('manga/anime',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > マンガ・アニメ
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="reading"> 読書
+                               <input type="checkbox" name="hobby[]" value="book"
+                               {{in_array('book',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > 読書
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="prowrestling"> プロレス
+                               <input type="checkbox" name="hobby[]" value="prowrestling"
+                               {{in_array('prowrestling',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > プロレス
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="delusion"> 妄想
+                               <input type="checkbox" name="hobby[]" value="delusion"
+                               {{in_array('delusion',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > 妄想
                            </label>
                            <label class="checkbox-inline">
-                               <input type="checkbox" name="hobby[]" value="game"> ゲーム
+                               <input type="checkbox" name="hobby[]" value="game"
+                               {{in_array('game',old('hobby') ?? []) === true ? 'checked' : '' }}
+                               > ゲーム
                            </label>
                        </div>
                    </div>
