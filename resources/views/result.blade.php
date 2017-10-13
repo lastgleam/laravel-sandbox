@@ -23,22 +23,22 @@
                 <table class="table table-hover">
                     <tbody>
                     <tr>
-                        <td>姓名</td><td>{{$result->surname}} {{$result->forename}}</td>
+                        <td>姓名</td><td>{{$result['surname']}} {{$result['forename']}}</td>
                     </tr>
                     <tr>
-                        <td>年齢</td><td>{{$result->age}}</td>
+                        <td>年齢</td><td>{{$result['age']}}</td>
                     </tr>
                     <tr>
-                        <td>国籍</td><td>{{$result->country}}</td>
+                        <td>国籍</td><td>{{$result['country']}}</td>
                     </tr>
                     <tr>
-                        <td>性別</td><td>{{$result->gender}}</td>
+                        <td>性別</td><td>{{$result['gender']}}</td>
                     </tr>
                     <tr>
                         <td>趣味</td>
                         <td>
                             <ul class="list-unstyled">
-                                @foreach(($result->hobby) as $hobby)
+                                @foreach($result['hobby'] as $hobby)
                                     <li>{{$hobby}}</li>
                                 @endforeach
                             </ul>
