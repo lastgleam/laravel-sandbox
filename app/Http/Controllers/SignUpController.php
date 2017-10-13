@@ -9,7 +9,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
+use Validator;
 
 class SignUpController extends BaseController{
     /**
@@ -21,14 +21,15 @@ class SignUpController extends BaseController{
     }
 
     /**
-     * 登録する。失敗すると前の画面にリダイレクトする。
+     * 登録する。失敗するとフォーム入力画面にエラーとともにリダイレクトする。
      * @param Request $request
      * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function signUp(Request $request) {
+        $request->flash();
         $validator = Validator::make($request->all(),[
-            'sei'=>'required',
-            'mei'=>'required',
+            'surname'=>'required',
+            'forename'=>'required',
             'age'=>'required|numeric|between:0,150',
             'country'=>'required',
             'gender'=>'required',
@@ -40,6 +41,6 @@ class SignUpController extends BaseController{
                 ->withInput();
         }
 
-        return view('result',['validator' => $validator]);
+        return view('result', ['request' => $request]);
     }
 }

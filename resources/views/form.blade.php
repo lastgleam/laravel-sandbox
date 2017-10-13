@@ -33,19 +33,19 @@
                    <div class="form-group">
                        <label class="col-sm-2 control-label">性</label>
                        <div class="col-sm-10">
-                           <input type="name" class="form-control" name="sei" placeholder="e.g. 新垣">
+                           <input type="name" class="form-control" name="surname" value="{{ old('surname') }}" placeholder="桜木">
                        </div>
                    </div>
                    <div class="form-group">
                        <label class="col-sm-2 control-label">名</label>
                        <div class="col-sm-10">
-                           <input type="name" class="form-control" name="mei" placeholder="e.g. 結衣">
+                           <input type="name" class="form-control" name="forename" value="{{ old('forename') }}" placeholder="花道">
                        </div>
                    </div>
                    <div class="form-group">
                        <label class="col-sm-2 control-label">年齢</label>
                        <div class="col-sm-10">
-                           <input type="text" class="form-control" name="age">
+                           <input type="text" class="form-control" name="age" value="{{ old('age') }}" placeholder="17">
                        </div>
                    </div>
                    <div class="form-group">

@@ -21,10 +21,9 @@
             </div>
             <div class="col-lg-6">
                 <table class="table table-hover">
-                    {{$request = $validator->request}}
                     <tbody>
                     <tr>
-                        <td>姓名</td><td>{{$request->sei}} {{$request->mei}}</td>
+                        <td>姓名</td><td>{{$request->surname}} {{$request->forename}}</td>
                     </tr>
                     <tr>
                         <td>年齢</td><td>{{$request->age}}</td>

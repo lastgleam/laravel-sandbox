@@ -81,9 +81,8 @@
                 <div class="title m-b-md">
                     Kim's Laravel Sandbox
                 </div>
-
                 <div class="links">
-                    <a href="/login">login</a>
+                    <a href="/SignUp">Sign Up</a>
                 </div>
             </div>
         </div>
