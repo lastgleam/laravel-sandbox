@@ -31,7 +31,7 @@
                <form class="form-horizontal" method="post" action="{{action('SignUpResultController@result')}}">
                    {{csrf_field()}}
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">性</label>
+                       <label class="col-sm-2 control-label">姓</label>
                        <div class="col-sm-10">
                            <input type="name" class="form-control" name="surname" value="{{ old('surname') }}" placeholder="桜木">
                        </div>
