@@ -8,11 +8,6 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <style>
-            tbody {
-                font-size: large;
-            }
-        </style>
     </head>
     <body>
         <div class="container">
@@ -21,12 +16,18 @@
             </div>
             <div class="col-lg-6">
                 <table class="table table-hover">
-                    <tbody>
+                    <tbody style="font-size: large">
                     <tr>
-                        <td>姓名</td><td>{{$result['surname']}} {{$result['forename']}}</td>
+                        <td>姓名</td><td>{{$result['surname'].' '.$result['forename']}}</td>
                     </tr>
                     <tr>
-                        <td>年齢</td><td>{{$result['age']}}</td>
+                        <td>Eメール</td><td>{{$result['email']}}</td>
+                    </tr>
+                    <tr>
+                        <td>年齢</td><td>{{$result['age']}}才</td>
+                    </tr>
+                    <tr>
+                        <td>生年月日</td><td>{{$result['year'].'年 '.$result['month'].'月 '.$result['day'].'日'}}</td>
                     </tr>
                     <tr>
                         <td>国籍</td><td>{{$result['country']}}</td>

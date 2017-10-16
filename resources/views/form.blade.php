@@ -28,29 +28,70 @@
                <h1>フォーム<br/><small>下のフォームを完成してから提出ボタンを押すと登録されます。</small></h1>
            </div>
            <div class="col-lg-6">
-               <form class="form-horizontal" method="post" action="{{action('SignUpResultController@result')}}">
+               <form class="form-horizontal" method="post" action="{{action('SignUpController@result')}}">
                    {{csrf_field()}}
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">姓</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">姓</label>
+                       <div class="col-sm-9">
                            <input type="name" class="form-control" name="surname" value="{{ old('surname') }}" placeholder="桜木">
                        </div>
                    </div>
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">名</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">名</label>
+                       <div class="col-sm-9">
                            <input type="name" class="form-control" name="forename" value="{{ old('forename') }}" placeholder="花道">
                        </div>
                    </div>
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">年齢</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">Eメール</label>
+                       <div class="col-sm-9">
+                           <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="abc@example.com">
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label class="col-sm-3 control-label">年齢</label>
+                       <div class="col-sm-9">
                            <input type="text" class="form-control" name="age" value="{{ old('age') }}" placeholder="17">
                        </div>
                    </div>
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">国籍</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">生年月日</label>
+                           <div class="form-inline">
+                               <div class="col-sm-3">
+                                   <select class="form-control" name="year">
+                                       @for($i = 1900; $i <= 2017; $i++ )
+                                           <option
+                                           {{old('year') == $i ? 'selected' : ''}}
+                                           >{{$i}}</option>
+                                       @endfor
+                                   </select>
+                                   <span>年</span>
+                               </div>
+                               <div class="col-sm-3">
+                                   <select class="form-control" name="month">
+                                       @for($i = 1; $i <= 12; $i++ )
+                                           <option
+                                           {{old('month') == $i ? 'selected' : ''}}
+                                           >{{$i}}</option>
+                                       @endfor
+                                   </select>
+                                   <span>月</span>
+                               </div>
+                               <div class="col-sm-3">
+                                   <select class="form-control" name="day">
+                                       @for($i = 1; $i <= 31; $i++ )
+                                           <option
+                                           {{old('day') == $i ? 'selected' : ''}}
+                                           >{{$i}}</option>
+                                       @endfor
+                                   </select>
+                                   <span>日</span>
+                               </div>
+                           </div>
+                   </div>
+                   <div class="form-group">
+                       <label class="col-sm-3 control-label">国籍</label>
+                       <div class="col-sm-9">
                            <select class="form-control" name="country">
                                <option value="japan"
                                {{old('country') === 'japan'? 'selected' : '' }}
@@ -74,8 +115,8 @@
                        </div>
                    </div>
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">性別</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">性別</label>
+                       <div class="col-sm-9">
                            <label class="radio-inline">
                                <input type="radio" name="gender" value="male"
                                {{old('gender') === 'male'? 'checked' : '' }}
@@ -87,8 +128,8 @@
                        </div>
                    </div>
                    <div class="form-group">
-                       <label class="col-sm-2 control-label">趣味</label>
-                       <div class="col-sm-10">
+                       <label class="col-sm-3 control-label">趣味</label>
+                       <div class="col-sm-9">
                            <label class="checkbox-inline">
                                <input type="checkbox" name="hobby[]" value="sports"
                                {{in_array('sports',old('hobby') ?? []) === true ? 'checked' : '' }}
@@ -137,7 +178,7 @@
                        </div>
                    </div>
                    <div class="form-group">
-                       <div class="col-sm-offset-2 col-sm-10">
+                       <div class="col-sm-offset-3 col-sm-9">
                            <button type="submit" class="btn btn-success">提出</button>
                        </div>
                    </div>

@@ -30,7 +30,11 @@ class SignUpController extends BaseController{
         $validator = Validator::make($request->all(),[
             'surname'=>'required',
             'forename'=>'required',
+            'email'=>'required|email',
             'age'=>'required|numeric|between:0,150',
+            'year' => 'required|numeric',
+            'month' => 'required|numeric',
+            'day' => 'required|numeric',
             'country'=>'required',
             'gender'=>'required',
             'hobby'=>'required'
