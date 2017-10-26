@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::get('/SignUp','SignUpController@input');
 Route::post('/SignUp/result','SignUpController@result');
+Route::get('/sentry','SignUpController@sentryTest');
