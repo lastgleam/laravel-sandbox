@@ -48,5 +48,8 @@ class SignUpController extends BaseController{
         $result = $request->all();
         return view('result', ['result' => $result]);
     }
+    public function sentryTest(){
+        throw new Exception('wow....!');
+    }
 
 }
